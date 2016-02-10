@@ -1,6 +1,0 @@
-version: "Swift version 3.0-dev (LLVM f95d47afa7, Clang f66c5bb67b, Swift b745691a38)"
-options: "307d02b0183592bcdb363107ab770fab"
-build_time: [508385318, 794395000]
-inputs:
-  "/vagrant/PostgresConnector/src/PostgresDB.swift": [508384777, 0]
-  "/vagrant/PostgresConnector/src/Result.swift": [508385583, 0]
