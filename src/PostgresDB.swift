@@ -43,7 +43,7 @@ public class PostgresDB {
             throw PostgresError.ConnectionAlreadyOpen
         }
 
-        var connectionString = "host='\(host)' port='\(port)' host='\(host)' dbname='\(databaseName)'"
+        var connectionString = "host='\(host)' port='\(port)' user='\(username)' dbname='\(databaseName)'"
 
         if let pw = password {
             connectionString += " password='\(pw)'"

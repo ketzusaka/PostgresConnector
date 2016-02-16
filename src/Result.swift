@@ -8,7 +8,6 @@
 
 import Cpq
 
-
 public enum PostgresResultStatus {
     case Successful
     case Transferring
