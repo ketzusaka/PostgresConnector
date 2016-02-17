@@ -17,8 +17,8 @@
 import Cpq
 
 /*protocol PostgresNotifyDelegate: class {
-    func postgresDB(postgresDB: PostgresDB, didReceiverNotification notification: String)
-}*/
+ func postgresDB(postgresDB: PostgresDB, didReceiverNotification notification: String)
+ }*/
 
 public class PostgresDB {
     let host: String
@@ -26,7 +26,7 @@ public class PostgresDB {
     let password: String?
     let port: Int
     let databaseName: String
-//    weak var notifyDelegate: PostgresNotifyDelegate?
+    //    weak var notifyDelegate: PostgresNotifyDelegate?
 
     public init(host: String = "localhost", username: String, password: String? = nil, port: Int = 5432, databaseName: String) {
         self.host = host

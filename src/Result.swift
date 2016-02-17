@@ -11,7 +11,7 @@ import Cpq
 public enum PostgresResultStatus {
     case Successful
     case Transferring
-    case Failed
+    case Failed(String?)
     case Unknown
 }
 
@@ -22,7 +22,7 @@ public class PostgresResult {
         switch PQresultStatus(result) {
         case PGRES_EMPTY_QUERY, PGRES_COMMAND_OK, PGRES_TUPLES_OK, PGRES_SINGLE_TUPLE: return .Successful
         case PGRES_COPY_OUT, PGRES_COPY_IN, PGRES_COPY_BOTH: return .Transferring
-        case PGRES_FATAL_ERROR, PGRES_BAD_RESPONSE: return .Failed // TODO: Give more info on failure?
+        case PGRES_FATAL_ERROR, PGRES_BAD_RESPONSE: return .Failed(String.fromCString(PQresultErrorMessage(result)))
         default: return .Unknown
         }
     }
@@ -93,8 +93,13 @@ public enum PostgresValue {
             self = Int(intValue)
         case 17, 18, 25:
             self = .String(v)
-            
-        // TODO: Bool
+
+        case 16:
+            if v == "t" {
+                self = .Bool(true)
+            } else {
+                self = .Bool(false)
+            }
 
         default: self = .Unknown
         }
