@@ -19,7 +19,7 @@
 		1AB7B6EC1C6A52BD004066D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		1AB7B6F01C6A52CF004066D0 /* PostgresDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostgresDB.swift; sourceTree = "<group>"; };
 		1AB7B6F21C6A54E2004066D0 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		1AB7B6F41C6A559E004066D0 /* libpq.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpq.a; path = "Packages/libpq-1.0.0/libpq.a"; sourceTree = "<group>"; };
+		1AB7B6F41C6A559E004066D0 /* libpq.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpq.a; path = ../libpq/libpq.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

@@ -91,7 +91,7 @@ public enum PostgresValue {
                 return
             }
             self = Int(intValue)
-        case 17, 18, 25:
+        case 17, 18, 25, 1043:
             self = .String(v)
 
         case 16:
