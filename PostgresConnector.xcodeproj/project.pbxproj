@@ -7,18 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A79D10C1C98EE31000F8CFD /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A79D10B1C98EE31000F8CFD /* Lock.swift */; };
+		1A79D10E1C99AD37000F8CFD /* PGValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A79D10D1C99AD37000F8CFD /* PGValue.swift */; };
 		1AB7B6EB1C6A52BD004066D0 /* PostgresConnector.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AB7B6EA1C6A52BD004066D0 /* PostgresConnector.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1AB7B6F11C6A52CF004066D0 /* PostgresDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7B6F01C6A52CF004066D0 /* PostgresDB.swift */; };
-		1AB7B6F31C6A54E2004066D0 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7B6F21C6A54E2004066D0 /* Result.swift */; };
+		1AB7B6F11C6A52CF004066D0 /* PGConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7B6F01C6A52CF004066D0 /* PGConnection.swift */; };
+		1AB7B6F31C6A54E2004066D0 /* PGResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7B6F21C6A54E2004066D0 /* PGResult.swift */; };
 		1AB7B6F51C6A559E004066D0 /* libpq.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB7B6F41C6A559E004066D0 /* libpq.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A79D10B1C98EE31000F8CFD /* Lock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lock.swift; sourceTree = "<group>"; };
+		1A79D10D1C99AD37000F8CFD /* PGValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PGValue.swift; sourceTree = "<group>"; };
 		1AB7B6E71C6A52BD004066D0 /* PostgresConnector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PostgresConnector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB7B6EA1C6A52BD004066D0 /* PostgresConnector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostgresConnector.h; sourceTree = "<group>"; };
 		1AB7B6EC1C6A52BD004066D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
-		1AB7B6F01C6A52CF004066D0 /* PostgresDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostgresDB.swift; sourceTree = "<group>"; };
-		1AB7B6F21C6A54E2004066D0 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		1AB7B6F01C6A52CF004066D0 /* PGConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PGConnection.swift; sourceTree = "<group>"; };
+		1AB7B6F21C6A54E2004066D0 /* PGResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PGResult.swift; sourceTree = "<group>"; };
 		1AB7B6F41C6A559E004066D0 /* libpq.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpq.a; path = ../libpq/libpq.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,10 +58,12 @@
 		1AB7B6E91C6A52BD004066D0 /* PostgresConnector */ = {
 			isa = PBXGroup;
 			children = (
-				1AB7B6EA1C6A52BD004066D0 /* PostgresConnector.h */,
 				1AB7B6EC1C6A52BD004066D0 /* Info.plist */,
-				1AB7B6F01C6A52CF004066D0 /* PostgresDB.swift */,
-				1AB7B6F21C6A54E2004066D0 /* Result.swift */,
+				1A79D10B1C98EE31000F8CFD /* Lock.swift */,
+				1A79D10D1C99AD37000F8CFD /* PGValue.swift */,
+				1AB7B6EA1C6A52BD004066D0 /* PostgresConnector.h */,
+				1AB7B6F01C6A52CF004066D0 /* PGConnection.swift */,
+				1AB7B6F21C6A54E2004066D0 /* PGResult.swift */,
 			);
 			name = PostgresConnector;
 			path = src;
@@ -140,8 +146,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AB7B6F31C6A54E2004066D0 /* Result.swift in Sources */,
-				1AB7B6F11C6A52CF004066D0 /* PostgresDB.swift in Sources */,
+				1A79D10E1C99AD37000F8CFD /* PGValue.swift in Sources */,
+				1AB7B6F31C6A54E2004066D0 /* PGResult.swift in Sources */,
+				1A79D10C1C98EE31000F8CFD /* Lock.swift in Sources */,
+				1AB7B6F11C6A52CF004066D0 /* PGConnection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +194,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_VERSION = A;
@@ -250,6 +259,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_VERSION = A;
