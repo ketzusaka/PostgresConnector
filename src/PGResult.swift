@@ -8,6 +8,7 @@
 
 import Cpq
 
+/// An enum representing the general status of a `PGResult`
 public enum PGResultStatus {
     case successful
     case transferring
@@ -15,14 +16,32 @@ public enum PGResultStatus {
     case unknown
 }
 
+extension PGResultStatus: Equatable { }
+
+public func == (lhs: PGResultStatus, rhs: PGResultStatus) -> Bool {
+    switch (lhs, rhs) {
+    case (.successful, .successful), (.transferring, .transferring), (.unknown, .unknown): return true
+    case (.failed(let f1), .failed(let f2)): return f1 == f2
+    default: return false
+    }
+}
+
+/// The result of an executed postgres query
 public class PGResult {
     private let result: OpaquePointer
-    public var columnCount: Int {
+
+    /// The number of fields contained in the result
+    public var fieldCount: Int {
         return fields.count
     }
+
+    /// The number of rows in the result
     public let rowCount: Int
+
+    /// The fields contained in the result
     public let fields: [String]
 
+    /// The status for the result
     public var status: PGResultStatus {
         switch PQresultStatus(result) {
         case PGRES_EMPTY_QUERY, PGRES_COMMAND_OK, PGRES_TUPLES_OK, PGRES_SINGLE_TUPLE: return .successful
@@ -41,7 +60,7 @@ public class PGResult {
 
 extension PGResult: Collection {
     public typealias Index = Int
-    public typealias Iterator = AnyIterator<ResultRow>.Iterator
+    public typealias Iterator = AnyIterator<PGRow>.Iterator
 
     public var startIndex: Index {
         return 0
@@ -51,9 +70,9 @@ extension PGResult: Collection {
         return rowCount
     }
 
-    public subscript(index: Index) -> ResultRow {
+    public subscript(index: Index) -> PGRow {
         precondition(index < endIndex)
-        return ResultRow(result: result, row: index, fields: fields)
+        return PGRow(result: result, row: index, fields: fields)
     }
 
     public func makeIterator() -> Iterator {
@@ -66,58 +85,3 @@ extension PGResult: Collection {
         }
     }
 }
-
-public struct ResultRow {
-    private let result: OpaquePointer
-    private let row: Int
-    public var columnCount: Int {
-        return fields.count
-    }
-
-    public let fields: [String]
-
-    init(result: OpaquePointer, row: Int, fields: [String]) {
-        self.result = result
-        self.row = row
-        self.fields = fields
-    }
-
-    public subscript(index: String) -> PGValue? {
-        guard let columnIndex = fields.index(of: index) else { return nil }
-        return self[columnIndex].1
-    }
-}
-
-extension ResultRow: Collection {
-    public typealias Index = Int
-    public typealias Element = (String, PGValue)
-    public typealias Iterator = AnyIterator<Element>.Iterator
-
-    public var startIndex: Index {
-        return 0
-    }
-
-    public var endIndex: Index {
-        return columnCount
-    }
-
-    public subscript(index: Index) -> Element {
-        precondition(index < endIndex)
-        let type = PQftype(self.result, Int32(index))
-        let field = fields[index]
-        return (field, PGValue(value: String(validatingUTF8: PQgetvalue(self.result, Int32(self.row), Int32(index))), withType: type))
-    }
-
-    public func makeIterator() -> Iterator {
-        var currentIndex = startIndex
-        return AnyIterator {
-            guard currentIndex < self.endIndex else { return nil }
-            let value = self[currentIndex]
-            currentIndex += 1
-            return value
-        }
-    }
-}
-
-
-

@@ -13,6 +13,7 @@
 		1AB7B6F11C6A52CF004066D0 /* PGConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7B6F01C6A52CF004066D0 /* PGConnection.swift */; };
 		1AB7B6F31C6A54E2004066D0 /* PGResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7B6F21C6A54E2004066D0 /* PGResult.swift */; };
 		1AB7B6F51C6A559E004066D0 /* libpq.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB7B6F41C6A559E004066D0 /* libpq.a */; };
+		1ADAB96E1C9F64DF0031D017 /* PGRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADAB96D1C9F64DF0031D017 /* PGRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		1AB7B6F01C6A52CF004066D0 /* PGConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PGConnection.swift; sourceTree = "<group>"; };
 		1AB7B6F21C6A54E2004066D0 /* PGResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PGResult.swift; sourceTree = "<group>"; };
 		1AB7B6F41C6A559E004066D0 /* libpq.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpq.a; path = ../libpq/libpq.a; sourceTree = "<group>"; };
+		1ADAB96D1C9F64DF0031D017 /* PGRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PGRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +62,11 @@
 			children = (
 				1AB7B6EC1C6A52BD004066D0 /* Info.plist */,
 				1A79D10B1C98EE31000F8CFD /* Lock.swift */,
-				1A79D10D1C99AD37000F8CFD /* PGValue.swift */,
-				1AB7B6EA1C6A52BD004066D0 /* PostgresConnector.h */,
 				1AB7B6F01C6A52CF004066D0 /* PGConnection.swift */,
 				1AB7B6F21C6A54E2004066D0 /* PGResult.swift */,
+				1ADAB96D1C9F64DF0031D017 /* PGRow.swift */,
+				1A79D10D1C99AD37000F8CFD /* PGValue.swift */,
+				1AB7B6EA1C6A52BD004066D0 /* PostgresConnector.h */,
 			);
 			name = PostgresConnector;
 			path = src;
@@ -149,6 +152,7 @@
 				1A79D10E1C99AD37000F8CFD /* PGValue.swift in Sources */,
 				1AB7B6F31C6A54E2004066D0 /* PGResult.swift in Sources */,
 				1A79D10C1C98EE31000F8CFD /* Lock.swift in Sources */,
+				1ADAB96E1C9F64DF0031D017 /* PGRow.swift in Sources */,
 				1AB7B6F11C6A52CF004066D0 /* PGConnection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

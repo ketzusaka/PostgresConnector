@@ -52,9 +52,8 @@ import Cpq
  SELECT attname,atttypid FROM pg_attribute WHERE attrelid = (SELECT oid FROM pg_class WHERE relname = 'field_testing');
  */
 
-/**
- A value from a Postgres DB. If the column is an unknown type we'll store it in the `unknown` case.
- */
+
+///A value from a Postgres DB. If the column is an unknown type we'll store it in the `unknown` case.
 public enum PGValue {
     case int(Int64)
     case string(String)
