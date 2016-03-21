@@ -69,7 +69,7 @@
 				1AB7B6EA1C6A52BD004066D0 /* PostgresConnector.h */,
 			);
 			name = PostgresConnector;
-			path = src;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
