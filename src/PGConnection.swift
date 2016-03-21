@@ -8,11 +8,11 @@
 
 #if os(Linux)
     import Glibc
+    import CPostgreSQLLinux
 #else
     import Darwin
+    import CPostgreSQLMac
 #endif
-
-import Cpq
 
 /**
  A connection to a Postgres database.
@@ -30,7 +30,7 @@ public class PGConnection {
     /// The database to connect to
     public let databaseName: String
 
-    private let connectionLock = NSLock()
+    private let connectionLock = Lock()
 
     public init(host: String = "localhost", username: String, port: Int = 5432, databaseName: String) {
         self.host = host

@@ -6,7 +6,11 @@
 //
 //
 
-import Cpq
+#if os(Linux)
+    import CPostgreSQLLinux
+#else
+    import CPostgreSQLMac
+#endif
 
 /// An enum representing the general status of a `PGResult`
 public enum PGResultStatus {

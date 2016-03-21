@@ -6,7 +6,11 @@
 //
 //
 
-import Cpq
+#if os(Linux)
+    import CPostgreSQLLinux
+#else
+    import CPostgreSQLMac
+#endif
 
 /// A row of data from a postgres query
 public struct PGRow {
