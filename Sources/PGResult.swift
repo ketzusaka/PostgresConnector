@@ -60,6 +60,10 @@ public class PGResult {
         rowCount = Int(PQntuples(result))
         fields = (0 ..< Int32(PQnfields(result))).map { String(validatingUTF8: PQfname(result, $0))! }
     }
+
+    deinit {
+        PQclear(result)
+    }
 }
 
 extension PGResult: Collection {
