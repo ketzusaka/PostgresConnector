@@ -6,7 +6,11 @@
 //
 //
 
-import CPostgreSQLMac
+#if os(Linux)
+    import CPostgreSQLLinux
+#else
+    import CPostgreSQLMac
+#endif
 
 /*
  The case for a `PGValue` is determined by its Oid. Below is a list of Oids from a table where I
