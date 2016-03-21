@@ -22,7 +22,7 @@ public enum PGResultStatus {
 
 extension PGResultStatus: Equatable { }
 
-public func == (lhs: PGResultStatus, rhs: PGResultStatus) -> Bool {
+public func ==(lhs: PGResultStatus, rhs: PGResultStatus) -> Bool {
     switch (lhs, rhs) {
     case (.successful, .successful), (.transferring, .transferring), (.unknown, .unknown): return true
     case (.failed(let f1), .failed(let f2)): return f1 == f2

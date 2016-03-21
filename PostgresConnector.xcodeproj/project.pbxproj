@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A79D10C1C98EE31000F8CFD /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A79D10B1C98EE31000F8CFD /* Lock.swift */; };
-		1A79D10E1C99AD37000F8CFD /* PGValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A79D10D1C99AD37000F8CFD /* PGValue.swift */; };
+		1A79D10E1C99AD37000F8CFD /* PostgresDataConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A79D10D1C99AD37000F8CFD /* PostgresDataConvertible.swift */; };
 		1AB7B6EB1C6A52BD004066D0 /* PostgresConnector.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AB7B6EA1C6A52BD004066D0 /* PostgresConnector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1AB7B6F11C6A52CF004066D0 /* PGConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7B6F01C6A52CF004066D0 /* PGConnection.swift */; };
 		1AB7B6F31C6A54E2004066D0 /* PGResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7B6F21C6A54E2004066D0 /* PGResult.swift */; };
@@ -17,7 +17,7 @@
 
 /* Begin PBXFileReference section */
 		1A79D10B1C98EE31000F8CFD /* Lock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lock.swift; sourceTree = "<group>"; };
-		1A79D10D1C99AD37000F8CFD /* PGValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PGValue.swift; sourceTree = "<group>"; };
+		1A79D10D1C99AD37000F8CFD /* PostgresDataConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostgresDataConvertible.swift; sourceTree = "<group>"; };
 		1AB7B6E71C6A52BD004066D0 /* PostgresConnector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PostgresConnector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB7B6EA1C6A52BD004066D0 /* PostgresConnector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostgresConnector.h; sourceTree = "<group>"; };
 		1AB7B6EC1C6A52BD004066D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
@@ -65,8 +65,8 @@
 				1AB7B6F01C6A52CF004066D0 /* PGConnection.swift */,
 				1AB7B6F21C6A54E2004066D0 /* PGResult.swift */,
 				1ADAB96D1C9F64DF0031D017 /* PGRow.swift */,
-				1A79D10D1C99AD37000F8CFD /* PGValue.swift */,
 				1AB7B6EA1C6A52BD004066D0 /* PostgresConnector.h */,
+				1A79D10D1C99AD37000F8CFD /* PostgresDataConvertible.swift */,
 			);
 			name = PostgresConnector;
 			path = Sources;
@@ -149,7 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A79D10E1C99AD37000F8CFD /* PGValue.swift in Sources */,
+				1A79D10E1C99AD37000F8CFD /* PostgresDataConvertible.swift in Sources */,
 				1AB7B6F31C6A54E2004066D0 /* PGResult.swift in Sources */,
 				1A79D10C1C98EE31000F8CFD /* Lock.swift in Sources */,
 				1ADAB96E1C9F64DF0031D017 /* PGRow.swift in Sources */,

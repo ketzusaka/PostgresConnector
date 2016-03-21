@@ -56,7 +56,7 @@ public class PGConnection {
             throw PostgresError.connectionAlreadyOpen
         }
 
-        var connectionString = "host='\(host)' port='\(port)' user='\(username)'' dbname='\(databaseName)"
+        var connectionString = "host='\(host)' port='\(port)' user='\(username)' dbname='\(databaseName)'"
 
         if let pw = password {
             connectionString += " password='\(pw)'"
@@ -73,7 +73,8 @@ public class PGConnection {
         }
 
         do {
-            if try execute(query: "SET datestyle TO ISO, MDY").status == PGResultStatus.successful {
+            let status = try execute(query: "SET datestyle TO ISO, MDY", lock: false).status
+            if status != PGResultStatus.successful {
                 throw PostgresError.couldNotSetDateStyle
             }
         } catch let error {
@@ -91,8 +92,19 @@ public class PGConnection {
      - throws:      `PostgresError.invalidConnection` if there isn't a connection.
      */
     public func execute(query query: String) throws -> PGResult {
-        connectionLock.lock()
-        defer { connectionLock.unlock() }
+        return try execute(query: query, lock: true)
+    }
+
+    private func execute(query query: String, lock: Bool) throws -> PGResult {
+        if lock {
+            connectionLock.lock()
+        }
+
+        defer {
+            if lock {
+                connectionLock.unlock()
+            }
+        }
 
         guard let conn = connection else {
             throw PostgresError.invalidConnection

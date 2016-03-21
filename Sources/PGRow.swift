@@ -8,9 +8,13 @@
 
 #if os(Linux)
     import CPostgreSQLLinux
+    import Glibc
 #else
     import CPostgreSQLMac
+    import Darwin
 #endif
+
+// Inspiration for value reading: https://github.com/Zewo/SQL
 
 /// A row of data from a postgres query
 public struct PGRow {
@@ -31,39 +35,56 @@ public struct PGRow {
         self.fields = fields
     }
 
-    public subscript(index: String) -> PGValue? {
-        guard let columnIndex = fields.index(of: index) else { return nil }
-        return self[columnIndex].1
+    /**
+     Reads a value for a given `field`, attempting to convert it to the expected type.
+     
+     Null values are not allowed. This will raise an error if the value in the db is null.
+     
+     - parameter    field: The name of the field to read
+     - returns:     The converted value, if non-null and successfully converted
+    */
+    public func value<Value: PostgresDataConvertible>(for field: String) throws -> Value {
+        return try makeValue(for: field, allowingNull: false)!
+    }
+
+    /**
+     Reads a value for a given `field`, attempting to convert it to the expected type.
+     
+     If the value is null this will return nil.
+
+     - parameter    field: The name of the field to read
+     - returns:     The converted value, if non-null and successfully converted
+     */
+    public func value<Value: PostgresDataConvertible>(for field: String) throws -> Value? {
+        return try makeValue(for: field, allowingNull: true)
+    }
+
+    private func makeValue<Value: PostgresDataConvertible>(for field: String, allowingNull: Bool) throws -> Value? {
+        guard let fieldIndex = fields.index(of: field) else {
+            throw PostgresRowError.invalidFieldName
+        }
+
+        let row = Int32(self.row)
+        let field = Int32(fieldIndex)
+
+        guard !Bool(Int(PQgetisnull(result, row, field))) else {
+            if allowingNull {
+                return nil
+            } else {
+                throw PostgresRowError.unexpectedNullValue
+            }
+        }
+
+        let rawData = PQgetvalue(result, row, field)
+        let rawDataLength = Int(PQgetlength(result, row, field))
+        var data = [UInt8](repeating: 0, count: rawDataLength)
+        memcpy(&data, rawData, rawDataLength)
+
+        return try Value(rawPostgresData: data)
     }
 }
 
-extension PGRow: Collection {
-    public typealias Index = Int
-    public typealias Element = (String, PGValue)
-    public typealias Iterator = AnyIterator<Element>.Iterator
-
-    public var startIndex: Index {
-        return 0
-    }
-
-    public var endIndex: Index {
-        return fieldCount
-    }
-
-    public subscript(index: Index) -> Element {
-        precondition(index < endIndex)
-        let type = PQftype(self.result, Int32(index))
-        let field = fields[index]
-        return (field, PGValue(value: String(validatingUTF8: PQgetvalue(self.result, Int32(self.row), Int32(index))), withType: type))
-    }
-
-    public func makeIterator() -> Iterator {
-        var currentIndex = startIndex
-        return AnyIterator {
-            guard currentIndex < self.endIndex else { return nil }
-            let value = self[currentIndex]
-            currentIndex += 1
-            return value
-        }
-    }
+public enum PostgresRowError: ErrorProtocol {
+    case invalidFieldName
+    case unexpectedNullValue
 }
