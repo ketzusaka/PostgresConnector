@@ -67,7 +67,7 @@ public struct PGRow {
         let row = Int32(self.row)
         let field = Int32(fieldIndex)
 
-        guard !Bool(Int(PQgetisnull(result, row, field))) else {
+        guard PQgetisnull(result, row, field) == 0 else {
             if allowingNull {
                 return nil
             } else {
