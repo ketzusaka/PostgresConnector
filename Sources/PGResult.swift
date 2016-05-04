@@ -69,6 +69,7 @@ public class PGResult {
 extension PGResult: Collection {
     public typealias Index = Int
     public typealias Iterator = AnyIterator<PGRow>.Iterator
+    public typealias SubSequence = Array<PGRow>
 
     public var startIndex: Index {
         return 0
@@ -78,9 +79,21 @@ extension PGResult: Collection {
         return rowCount
     }
 
-    public subscript(index: Index) -> PGRow {
-        precondition(index < endIndex)
-        return PGRow(result: result, row: index, fields: fields)
+    public subscript(position: Index) -> PGRow {
+        precondition(position < endIndex)
+        return PGRow(result: result, row: position, fields: fields)
+    }
+
+    public subscript(bounds: Range<Index>) -> SubSequence {
+        return (bounds.lowerBound ..< bounds.upperBound).reduce([PGRow]()) { memo, index in
+            var memo = memo
+            memo.append(PGRow(result: result, row: index, fields: fields))
+            return memo
+        }
+    }
+
+    public func index(after i: Index) -> Index {
+        return i + 1
     }
 
     public func makeIterator() -> Iterator {

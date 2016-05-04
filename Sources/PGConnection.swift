@@ -91,11 +91,11 @@ public class PGConnection {
      - returns:     A `PGResult` representing the query
      - throws:      `PostgresError.invalidConnection` if there isn't a connection.
      */
-    public func execute(query query: String) throws -> PGResult {
+    public func execute(query: String) throws -> PGResult {
         return try execute(query: query, lock: true)
     }
 
-    private func execute(query query: String, lock: Bool) throws -> PGResult {
+    private func execute(query: String, lock: Bool) throws -> PGResult {
         if lock {
             connectionLock.lock()
         }
