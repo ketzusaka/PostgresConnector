@@ -95,6 +95,21 @@ public class PGConnection {
         return try execute(query: query, lock: true)
     }
 
+    /**
+     Execute a query formattable query string. This will escape occurrances of ' with
+     \' to prevent injection attacks.
+
+     - parameter    query:  The format query string to execute
+     - parameter    values: The values to substitute in.
+     - returns:     A `PGResult` representing the query
+     - throws:      `PostgresError.invalidConnection` if there isn't a connection.
+     */
+    public func execute(query: String, values: String...) throws -> PGResult {
+        let safeValues = values.map { $0.replacingOccurrences(of: "'", with: "\\'") }
+
+        return try execute(query: String(format: query, safeValues))
+    }
+
     private func execute(query: String, lock: Bool) throws -> PGResult {
         if lock {
             connectionLock.lock()
