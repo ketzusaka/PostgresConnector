@@ -14,6 +14,8 @@
     import CPostgreSQLMac
 #endif
 
+import Foundation
+
 /**
  A connection to a Postgres database.
  */
