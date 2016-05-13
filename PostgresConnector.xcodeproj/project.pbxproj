@@ -1,323 +1,260 @@
 // !$*UTF8*$!
 {
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		1A79D10C1C98EE31000F8CFD /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A79D10B1C98EE31000F8CFD /* Lock.swift */; };
-		1A79D10E1C99AD37000F8CFD /* PostgresDataConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A79D10D1C99AD37000F8CFD /* PostgresDataConvertible.swift */; };
-		1AB7B6EB1C6A52BD004066D0 /* PostgresConnector.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AB7B6EA1C6A52BD004066D0 /* PostgresConnector.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1AB7B6F11C6A52CF004066D0 /* PGConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7B6F01C6A52CF004066D0 /* PGConnection.swift */; };
-		1AB7B6F31C6A54E2004066D0 /* PGResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7B6F21C6A54E2004066D0 /* PGResult.swift */; };
-		1ADAB96E1C9F64DF0031D017 /* PGRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADAB96D1C9F64DF0031D017 /* PGRow.swift */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXFileReference section */
-		1A79D10B1C98EE31000F8CFD /* Lock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lock.swift; sourceTree = "<group>"; };
-		1A79D10D1C99AD37000F8CFD /* PostgresDataConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostgresDataConvertible.swift; sourceTree = "<group>"; };
-		1AB7B6E71C6A52BD004066D0 /* PostgresConnector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PostgresConnector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1AB7B6EA1C6A52BD004066D0 /* PostgresConnector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostgresConnector.h; sourceTree = "<group>"; };
-		1AB7B6EC1C6A52BD004066D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
-		1AB7B6F01C6A52CF004066D0 /* PGConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PGConnection.swift; sourceTree = "<group>"; };
-		1AB7B6F21C6A54E2004066D0 /* PGResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PGResult.swift; sourceTree = "<group>"; };
-		1ADAB96D1C9F64DF0031D017 /* PGRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PGRow.swift; sourceTree = "<group>"; };
-		1ADAB96F1C9F6F1A0031D017 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = SOURCE_ROOT; };
-		1ADAB9711C9F71650031D017 /* libpq.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpq.a; path = /usr/local/lib/libpq.a; sourceTree = "<absolute>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		1AB7B6E31C6A52BD004066D0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		1AB7B6DB1C6A52AE004066D0 = {
-			isa = PBXGroup;
-			children = (
-				1ADAB9711C9F71650031D017 /* libpq.a */,
-				1AB7B6E91C6A52BD004066D0 /* PostgresConnector */,
-				1AB7B6E81C6A52BD004066D0 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		1AB7B6E81C6A52BD004066D0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				1AB7B6E71C6A52BD004066D0 /* PostgresConnector.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		1AB7B6E91C6A52BD004066D0 /* PostgresConnector */ = {
-			isa = PBXGroup;
-			children = (
-				1AB7B6EC1C6A52BD004066D0 /* Info.plist */,
-				1A79D10B1C98EE31000F8CFD /* Lock.swift */,
-				1ADAB96F1C9F6F1A0031D017 /* Package.swift */,
-				1AB7B6F01C6A52CF004066D0 /* PGConnection.swift */,
-				1AB7B6F21C6A54E2004066D0 /* PGResult.swift */,
-				1ADAB96D1C9F64DF0031D017 /* PGRow.swift */,
-				1AB7B6EA1C6A52BD004066D0 /* PostgresConnector.h */,
-				1A79D10D1C99AD37000F8CFD /* PostgresDataConvertible.swift */,
-			);
-			name = PostgresConnector;
-			path = Sources;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXHeadersBuildPhase section */
-		1AB7B6E41C6A52BD004066D0 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1AB7B6EB1C6A52BD004066D0 /* PostgresConnector.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
-/* Begin PBXNativeTarget section */
-		1AB7B6E61C6A52BD004066D0 /* PostgresConnector */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1AB7B6ED1C6A52BD004066D0 /* Build configuration list for PBXNativeTarget "PostgresConnector" */;
-			buildPhases = (
-				1AB7B6E21C6A52BD004066D0 /* Sources */,
-				1AB7B6E31C6A52BD004066D0 /* Frameworks */,
-				1AB7B6E41C6A52BD004066D0 /* Headers */,
-				1AB7B6E51C6A52BD004066D0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = PostgresConnector;
-			productName = PostgresConnector;
-			productReference = 1AB7B6E71C6A52BD004066D0 /* PostgresConnector.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		1AB7B6DC1C6A52AE004066D0 /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 0730;
-				TargetAttributes = {
-					1AB7B6E61C6A52BD004066D0 = {
-						CreatedOnToolsVersion = 7.3;
-					};
-				};
-			};
-			buildConfigurationList = 1AB7B6DF1C6A52AE004066D0 /* Build configuration list for PBXProject "PostgresConnector" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-			);
-			mainGroup = 1AB7B6DB1C6A52AE004066D0;
-			productRefGroup = 1AB7B6E81C6A52BD004066D0 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				1AB7B6E61C6A52BD004066D0 /* PostgresConnector */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		1AB7B6E51C6A52BD004066D0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		1AB7B6E21C6A52BD004066D0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1A79D10E1C99AD37000F8CFD /* PostgresDataConvertible.swift in Sources */,
-				1AB7B6F31C6A54E2004066D0 /* PGResult.swift in Sources */,
-				1A79D10C1C98EE31000F8CFD /* Lock.swift in Sources */,
-				1ADAB96E1C9F64DF0031D017 /* PGRow.swift in Sources */,
-				1AB7B6F11C6A52CF004066D0 /* PGConnection.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin XCBuildConfiguration section */
-		1AB7B6E01C6A52AE004066D0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Debug;
-		};
-		1AB7B6E11C6A52AE004066D0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Release;
-		};
-		1AB7B6EE1C6A52BD004066D0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Packages/libpq-1.0.0",
-					/usr/local/lib,
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.MagicalPenguin.PostgresConnector;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_INCLUDE_PATHS = "${SRCROOT}/Packages/CPostgreSQL-0.1.1";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		1AB7B6EF1C6A52BD004066D0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Packages/libpq-1.0.0",
-					/usr/local/lib,
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.MagicalPenguin.PostgresConnector;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_INCLUDE_PATHS = "${SRCROOT}/Packages/CPostgreSQL-0.1.1";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		1AB7B6DF1C6A52AE004066D0 /* Build configuration list for PBXProject "PostgresConnector" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1AB7B6E01C6A52AE004066D0 /* Debug */,
-				1AB7B6E11C6A52AE004066D0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1AB7B6ED1C6A52BD004066D0 /* Build configuration list for PBXNativeTarget "PostgresConnector" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1AB7B6EE1C6A52BD004066D0 /* Debug */,
-				1AB7B6EF1C6A52BD004066D0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = 1AB7B6DC1C6A52AE004066D0 /* Project object */;
+    archiveVersion = 1;
+    classes = {};
+    objectVersion = 46;
+    rootObject = __RootObject_;
+    objects = {
+        __RootObject_ = {
+            isa = PBXProject;
+            attributes = {LastUpgradeCheck = 9999;};
+            buildConfigurationList = ___RootConfs_;
+            compatibilityVersion = 'Xcode 3.2';
+            developmentRegion = English;
+            hasScannedForEncodings = 0;
+            knownRegions = (en);
+            mainGroup = ___RootGroup_;
+            productRefGroup = ____Products_;
+            projectDirPath = '';
+            projectRoot = '';
+            targets = (______Target_String, ______Target_PostgresConnector);
+        };
+        '__PBXFileRef_Package.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'Package.swift';
+            path = 'Package.swift';
+            sourceTree = '<group>';
+        };
+        ___RootGroup_ = {
+            isa = PBXGroup;
+            children = ('__PBXFileRef_Package.swift', _____Configs_, _____Sources_, Dependencies_, _______Tests_, ____Products_);
+            sourceTree = '<group>';
+        };
+        _______Group_String = {
+            isa = PBXGroup;
+            name = String;
+            path = 'Packages/String-0.7.1/Source';
+            sourceTree = '<group>';
+            children = ('__PBXFileRef_Packages/String-0.7.1/Source/String.swift');
+        };
+        '__PBXFileRef_Packages/String-0.7.1/Source/String.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'String.swift';
+            sourceTree = '<group>';
+        };
+        ______Target_String = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = _______Confs_String;
+            buildPhases = (CompilePhase_String, ___LinkPhase_String);
+            buildRules = ();
+            dependencies = ();
+            name = String;
+            productName = String;
+            productReference = _____Product_String;
+            productType = 'com.apple.product-type.library.dynamic';
+        };
+        _____Product_String = {
+            isa = PBXFileReference;
+            explicitFileType = 'compiled.mach-o.dylib';
+            path = 'String.dylib';
+            sourceTree = BUILT_PRODUCTS_DIR;
+        };
+        CompilePhase_String = {
+            isa = PBXSourcesBuildPhase;
+            files = ('__src_cc_ref_Packages/String-0.7.1/Source/String.swift');
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        ___LinkPhase_String = {
+            isa = PBXFrameworksBuildPhase;
+            files = ();
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        '__src_cc_ref_Packages/String-0.7.1/Source/String.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Packages/String-0.7.1/Source/String.swift';
+        };
+        _LinkFileRef_String = {
+            isa = PBXBuildFile;
+            fileRef = _____Product_String;
+        };
+        _______Confs_String = {
+            isa = XCConfigurationList;
+            buildConfigurations = (___DebugConf_String, _ReleaseConf_String);
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Debug;
+        };
+        ___DebugConf_String = {
+            isa = XCBuildConfiguration;
+            buildSettings = { ENABLE_TESTABILITY = YES; SWIFT_OPTIMIZATION_LEVEL = -Onone; LD_RUNPATH_SEARCH_PATHS = '$(TOOLCHAIN_DIR)/usr/lib/swift/macosx'; };
+            name = Debug;
+        };
+        _ReleaseConf_String = {
+            isa = XCBuildConfiguration;
+            buildSettings = { ENABLE_TESTABILITY = YES; LD_RUNPATH_SEARCH_PATHS = '$(TOOLCHAIN_DIR)/usr/lib/swift/macosx'; };
+            name = Release;
+        };
+        __Dependency_String = {
+            isa = PBXTargetDependency;
+            target = ______Target_String;
+        };
+        _______Group_PostgresConnector = {
+            isa = PBXGroup;
+            name = PostgresConnector;
+            path = 'Sources';
+            sourceTree = '<group>';
+            children = ('__PBXFileRef_Sources/Lock.swift', '__PBXFileRef_Sources/PGConnection.swift', '__PBXFileRef_Sources/PGResult.swift', '__PBXFileRef_Sources/PGRow.swift', '__PBXFileRef_Sources/PostgresDataConvertible.swift');
+        };
+        '__PBXFileRef_Sources/Lock.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'Lock.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/PGConnection.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'PGConnection.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/PGResult.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'PGResult.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/PGRow.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'PGRow.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/PostgresDataConvertible.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'PostgresDataConvertible.swift';
+            sourceTree = '<group>';
+        };
+        ______Target_PostgresConnector = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = _______Confs_PostgresConnector;
+            buildPhases = (CompilePhase_PostgresConnector, ___LinkPhase_PostgresConnector);
+            buildRules = ();
+            dependencies = (__Dependency_String);
+            name = PostgresConnector;
+            productName = PostgresConnector;
+            productReference = _____Product_PostgresConnector;
+            productType = 'com.apple.product-type.library.dynamic';
+        };
+        _____Product_PostgresConnector = {
+            isa = PBXFileReference;
+            explicitFileType = 'compiled.mach-o.dylib';
+            path = 'PostgresConnector.dylib';
+            sourceTree = BUILT_PRODUCTS_DIR;
+        };
+        CompilePhase_PostgresConnector = {
+            isa = PBXSourcesBuildPhase;
+            files = ('__src_cc_ref_Sources/Lock.swift', '__src_cc_ref_Sources/PGConnection.swift', '__src_cc_ref_Sources/PGResult.swift', '__src_cc_ref_Sources/PGRow.swift', '__src_cc_ref_Sources/PostgresDataConvertible.swift');
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        ___LinkPhase_PostgresConnector = {
+            isa = PBXFrameworksBuildPhase;
+            files = (_LinkFileRef_String);
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        '__src_cc_ref_Sources/Lock.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/Lock.swift';
+        };
+        '__src_cc_ref_Sources/PGConnection.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/PGConnection.swift';
+        };
+        '__src_cc_ref_Sources/PGResult.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/PGResult.swift';
+        };
+        '__src_cc_ref_Sources/PGRow.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/PGRow.swift';
+        };
+        '__src_cc_ref_Sources/PostgresDataConvertible.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/PostgresDataConvertible.swift';
+        };
+        _LinkFileRef_PostgresConnector = {
+            isa = PBXBuildFile;
+            fileRef = _____Product_PostgresConnector;
+        };
+        _______Confs_PostgresConnector = {
+            isa = XCConfigurationList;
+            buildConfigurations = (___DebugConf_PostgresConnector, _ReleaseConf_PostgresConnector);
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Debug;
+        };
+        ___DebugConf_PostgresConnector = {
+            isa = XCBuildConfiguration;
+            buildSettings = { LD_RUNPATH_SEARCH_PATHS = '$(TOOLCHAIN_DIR)/usr/lib/swift/macosx'; HEADER_SEARCH_PATHS = /Users/james/Documents/vagrant-swift/PostgresConnector/Packages/CPostgreSQL-0.1.1; ENABLE_TESTABILITY = YES; SWIFT_OPTIMIZATION_LEVEL = -Onone; };
+            name = Debug;
+        };
+        _ReleaseConf_PostgresConnector = {
+            isa = XCBuildConfiguration;
+            buildSettings = { ENABLE_TESTABILITY = YES; LD_RUNPATH_SEARCH_PATHS = '$(TOOLCHAIN_DIR)/usr/lib/swift/macosx'; HEADER_SEARCH_PATHS = /Users/james/Documents/vagrant-swift/PostgresConnector/Packages/CPostgreSQL-0.1.1; };
+            name = Release;
+        };
+        __Dependency_PostgresConnector = {
+            isa = PBXTargetDependency;
+            target = ______Target_PostgresConnector;
+        };
+        '__PBXFileRef_PostgresConnector.xcodeproj/Configs/Project.xcconfig' = {
+            isa = PBXFileReference;
+            lastKnownFileType = text.xcconfig;
+            name = 'Project.xcconfig';
+            path = 'PostgresConnector.xcodeproj/Configs/Project.xcconfig';
+            sourceTree = '<group>';
+        };
+        _____Configs_ = {
+            isa = PBXGroup;
+            children = ('__PBXFileRef_PostgresConnector.xcodeproj/Configs/Project.xcconfig');
+            name = Configs;
+            sourceTree = '<group>';
+        };
+        _____Sources_ = {
+            isa = PBXGroup;
+            children = (_______Group_String, _______Group_PostgresConnector);
+            name = Sources;
+            sourceTree = '<group>';
+        };
+        Dependencies_ = {
+            isa = PBXGroup;
+            children = (_______Group_String);
+            name = Dependencies;
+            sourceTree = '<group>';
+        };
+        ____Products_ = {
+            isa = PBXGroup;
+            children = (_____Product_String, _____Product_PostgresConnector);
+            name = Products;
+            sourceTree = '<group>';
+        };
+        _______Debug_ = {
+            isa = XCBuildConfiguration;
+            baseConfigurationReference = '__PBXFileRef_PostgresConnector.xcodeproj/Configs/Project.xcconfig';
+            buildSettings = {};
+            name = Debug;
+        };
+        _____Release_ = {
+            isa = XCBuildConfiguration;
+            baseConfigurationReference = '__PBXFileRef_PostgresConnector.xcodeproj/Configs/Project.xcconfig';
+            buildSettings = {};
+            name = Release;
+        };
+        ___RootConfs_ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (_______Debug_, _____Release_);
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Debug;
+        };
+    };
 }

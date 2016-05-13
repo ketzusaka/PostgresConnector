@@ -15,6 +15,7 @@
 #endif
 
 import Foundation
+import String
 
 /**
  A connection to a Postgres database.
@@ -109,7 +110,7 @@ public class PGConnection {
     public func execute(query: String, values: String...) throws -> PGResult {
         let safeValues = values.map { $0.replacingOccurrences(of: "'", with: "\\'") }
 
-        return try execute(query: String(format: query, safeValues))
+        return try execute(query: String(query: query, arguments: safeValues))
     }
 
     private func execute(query: String, lock: Bool) throws -> PGResult {
@@ -152,4 +153,31 @@ public enum PostgresError: ErrorProtocol {
     case invalidConnection
     case incorrectResult
     case connectionNotOpen
+    case invalidQueryString(String)
+}
+
+extension String {
+    init(query: String, arguments: [String]) throws {
+        let parts = query.split(byString: "%@")
+        guard parts.count == arguments.count + 1 else {
+            throw PostgresError.invalidQueryString("The number of arguments (\(arguments.count)) does not match the number of parameters (\(parts.count - 1))")
+        }
+
+        guard parts.count > 1 else {
+            self = parts[0]
+            return
+        }
+
+        var builtString = ""
+
+        for (index, part) in parts.enumerated() {
+            builtString.append(part)
+            if index != parts.index(parts.endIndex, offsetBy: -1) {
+                builtString.append(arguments[index])
+            }
+        }
+        
+        self = builtString
+    }
+    
 }

@@ -17,6 +17,16 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>______Target_PostgresConnector</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>______Target_String</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>

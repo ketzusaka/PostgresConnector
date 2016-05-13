@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "3130FFC7C803F828BD06BAA920D06AB40D625670",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "3130FFC7C803F828BD06BAA920D06AB40D625670" : 0,
+    "10A2CB6C4392F0E306FF8D509BE5E88232276EA4" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "760776E7-9888-4FD4-9DB1-C7982917BF96",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "3130FFC7C803F828BD06BAA920D06AB40D625670" : "PostgresConnector\/",
+    "10A2CB6C4392F0E306FF8D509BE5E88232276EA4" : "PostgresConnector\/Packages\/String-0.7.1\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "PostgresConnector",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "PostgresConnector.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/zewo\/string.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "10A2CB6C4392F0E306FF8D509BE5E88232276EA4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:ketzusaka\/PostgresConnector.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3130FFC7C803F828BD06BAA920D06AB40D625670"
+    }
+  ]
+}
