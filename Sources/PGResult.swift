@@ -32,7 +32,7 @@ public func ==(lhs: PGResultStatus, rhs: PGResultStatus) -> Bool {
 
 /// The result of an executed postgres query
 public class PGResult {
-    private let result: OpaquePointer
+    let result: OpaquePointer
 
     /// The number of fields contained in the result
     public var fieldCount: Int {
@@ -81,13 +81,13 @@ extension PGResult: Collection {
 
     public subscript(position: Index) -> PGRow {
         precondition(position < endIndex)
-        return PGRow(result: result, row: position, fields: fields)
+        return PGRow(result: self, row: position, fields: fields)
     }
 
     public subscript(bounds: Range<Index>) -> SubSequence {
         return (bounds.lowerBound ..< bounds.upperBound).reduce([PGRow]()) { memo, index in
             var memo = memo
-            memo.append(PGRow(result: result, row: index, fields: fields))
+            memo.append(PGRow(result: self, row: index, fields: fields))
             return memo
         }
     }

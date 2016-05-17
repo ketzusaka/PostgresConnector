@@ -18,7 +18,7 @@
 
 /// A row of data from a postgres query
 public struct PGRow {
-    private let result: OpaquePointer
+    private let result: PGResult
     private let row: Int
 
     /// The number of columns in the row
@@ -29,7 +29,7 @@ public struct PGRow {
     /// The fields contained in the row
     public let fields: [String]
 
-    init(result: OpaquePointer, row: Int, fields: [String]) {
+    init(result: PGResult, row: Int, fields: [String]) {
         self.result = result
         self.row = row
         self.fields = fields
@@ -67,7 +67,7 @@ public struct PGRow {
         let row = Int32(self.row)
         let field = Int32(fieldIndex)
 
-        guard PQgetisnull(result, row, field) == 0 else {
+        guard PQgetisnull(result.result, row, field) == 0 else {
             if allowingNull {
                 return nil
             } else {
@@ -75,8 +75,8 @@ public struct PGRow {
             }
         }
 
-        let rawData = PQgetvalue(result, row, field)
-        let rawDataLength = Int(PQgetlength(result, row, field))
+        let rawData = PQgetvalue(result.result, row, field)
+        let rawDataLength = Int(PQgetlength(result.result, row, field))
         var data = [UInt8](repeating: 0, count: rawDataLength)
         memcpy(&data, rawData, rawDataLength)
 
