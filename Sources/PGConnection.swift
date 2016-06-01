@@ -128,7 +128,10 @@ public class PGConnection {
             throw PostgresError.invalidConnection
         }
 
-        let res = PQexec(conn, query)
+        guard let res = PQexec(conn, query) else {
+            throw PostgresError.incorrectResult
+        }
+
         return PGResult(result: res)
     }
 
